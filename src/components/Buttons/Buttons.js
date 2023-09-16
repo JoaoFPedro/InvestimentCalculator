@@ -1,11 +1,14 @@
 import React from "react";
 import Container from "./Style";
 
-function Buttons() {
+function Buttons({ setUserInput, initialUserInput }) {
+  const resetHandler = () => {
+    setUserInput(initialUserInput);
+  };
   return (
     <Container>
       <p className="actions">
-        <button type="reset" className="buttonAlt">
+        <button onClick={resetHandler} type="reset" className="buttonAlt">
           Reset
         </button>
         <button type="submit" className="button">
