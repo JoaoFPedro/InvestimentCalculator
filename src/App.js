@@ -31,7 +31,11 @@ function App() {
     <div>
       <Header />
       <Form onCalculate={calculateHandler} />
-      {!userInput && <h1>No results Matched</h1>}
+      {!userInput && (
+        <h1 style={{ textAlign: "center", color: "red" }}>
+          No results Matched
+        </h1>
+      )}
       {userInput && (
         <Result
           data={yearlyData}
